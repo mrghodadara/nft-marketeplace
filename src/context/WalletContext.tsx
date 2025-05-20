@@ -64,6 +64,7 @@ export const WalletProvider = ({ children }: WalletProviderType) => {
       setIsInitialLoading(false);
     }
   };
+
   const connectWallet = async () => {
     if (!window?.ethereum) {
       toast.error('MetaMask is not installed');
@@ -101,7 +102,6 @@ export const WalletProvider = ({ children }: WalletProviderType) => {
   }, []);
 
   useEffect(() => {
-    console.log('window?.ethereum?.on', window?.ethereum?.on);
     if (!window.ethereum) return;
 
     const handleAccountsChanged = (accounts: string[]) => {
